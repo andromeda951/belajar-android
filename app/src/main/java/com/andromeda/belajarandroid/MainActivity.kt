@@ -1,5 +1,6 @@
 package com.andromeda.belajarandroid
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -18,7 +19,10 @@ class MainActivity : AppCompatActivity() {
         btn1 = findViewById(R.id.btn1)
 
         btn1.setOnClickListener {
-            text1.text = "Hello Programmer"
+            // Open MainActivity2
+            val intentDestination = Intent(this@MainActivity, MainActivity2::class.java)
+            intentDestination.putExtra(MainActivity2.EXTRA_DATA, "Hello My Friend")
+            startActivity(intentDestination)
         }
     }
 }
