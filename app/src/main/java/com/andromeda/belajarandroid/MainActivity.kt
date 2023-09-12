@@ -21,7 +21,8 @@ class MainActivity : AppCompatActivity() {
         btn1.setOnClickListener {
             // Open MainActivity2
             val intentDestination = Intent(this@MainActivity, MainActivity2::class.java)
-            intentDestination.putExtra(MainActivity2.EXTRA_DATA, "Hello My Friend")
+            // intentDestination.putExtra(MainActivity2.EXTRA_DATA, "Hello My Friend")
+            intentDestination.putExtra(MainActivity2.EXTRA_DATA, Student("Andromeda", "12345"))
             startActivity(intentDestination)
         }
     }

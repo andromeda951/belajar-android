@@ -1,7 +1,9 @@
 package com.andromeda.belajarandroid
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 
 class MainActivity2 : AppCompatActivity() {
@@ -17,7 +19,18 @@ class MainActivity2 : AppCompatActivity() {
         setContentView(R.layout.activity_main2)
 
         text1 = findViewById(R.id.textView)
-        val strData = intent.getStringExtra(EXTRA_DATA)
-        text1.text = strData
+
+        Log.i("TAG", "version ${Build.VERSION.SDK_INT}")
+
+        val student = if (Build.VERSION.SDK_INT >= 33) {
+            intent.getParcelableExtra(EXTRA_DATA, Student::class.java)
+        } else {
+            @Suppress("DEPRECATION")
+            intent.getParcelableExtra(EXTRA_DATA)
+        }
+
+        if (student != null) {
+            text1.text = student.name
+        }
     }
 }
