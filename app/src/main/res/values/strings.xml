@@ -3,4 +3,6 @@
     <string name="button1">Go To Activity 2</string>
     <string name="call_phone">Call Phone</string>
     <string name="this_is_activity_2">This is activity 2</string>
+    <string name="insert_your_name">Insert your name!</string>
+    <string name="submit">submit</string>
 </resources>

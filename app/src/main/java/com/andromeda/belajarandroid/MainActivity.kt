@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,7 +29,9 @@ class MainActivity : AppCompatActivity() {
             val intentDestination = Intent(this@MainActivity, MainActivity2::class.java)
             // intentDestination.putExtra(MainActivity2.EXTRA_DATA, "Hello My Friend")
             intentDestination.putExtra(MainActivity2.EXTRA_DATA, Student("kotlin-parcelize", "12345"))
-            startActivity(intentDestination)
+            // startActivity(intentDestination)
+
+            resultLauncher.launch(intentDestination)
         }
 
         // IMPLICIT INTENT
@@ -36,5 +40,12 @@ class MainActivity : AppCompatActivity() {
             val intentPhone = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$number")) // don't forget tel:
             startActivity(intentPhone)
         }
+    }
+
+    private val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            result -> if (result.resultCode == MainActivity2.RESULT_CODE && result.data != null) {
+                val name = result.data?.getStringExtra(MainActivity2.EXTRA_RETRUN_VALUE)
+                Toast.makeText(applicationContext, name, Toast.LENGTH_LONG).show()
+            }
     }
 }
