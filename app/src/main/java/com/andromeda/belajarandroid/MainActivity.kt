@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var text1: TextView
     private lateinit var btn1: Button
     private lateinit var btnPhone: Button
+    private lateinit var btnFragment: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         text1 = findViewById(R.id.text1)
         btn1 = findViewById(R.id.btn1)
         btnPhone = findViewById(R.id.btn_phone)
+        btnFragment = findViewById(R.id.btn_fragment)
 
         // EXPLICIT INTENT
         btn1.setOnClickListener {
@@ -39,6 +41,11 @@ class MainActivity : AppCompatActivity() {
             val number = "12345678"
             val intentPhone = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$number")) // don't forget tel:
             startActivity(intentPhone)
+        }
+
+        btnFragment.setOnClickListener {
+            val intentDestination = Intent(this@MainActivity, FragmentActivity::class.java)
+            startActivity(intentDestination)
         }
     }
 

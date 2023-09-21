@@ -5,4 +5,8 @@
     <string name="this_is_activity_2">This is activity 2</string>
     <string name="insert_your_name">Insert your name!</string>
     <string name="submit">submit</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment1">Hello blank fragment one (1)</string>
+    <string name="hello_blank_fragment2">Hello blank fragment two (2)</string>
+    <string name="go_to_fragment_activity">Go to Fragment Activity</string>
 </resources>
