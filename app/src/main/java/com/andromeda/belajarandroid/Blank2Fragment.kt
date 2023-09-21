@@ -9,6 +9,10 @@ import com.andromeda.belajarandroid.databinding.FragmentBlank2Binding
 
 class Blank2Fragment : Fragment() {
 
+    companion object {
+        val EXTRA_VALUE = "extra_value"
+    }
+
     private lateinit var binding: FragmentBlank2Binding
 
     override fun onCreateView(
@@ -23,6 +27,8 @@ class Blank2Fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.myText.text = arguments?.getString(EXTRA_VALUE)
 
         val fragment1 = Blank1Fragment()
         binding.btnNext.setOnClickListener {

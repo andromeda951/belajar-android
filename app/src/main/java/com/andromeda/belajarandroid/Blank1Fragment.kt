@@ -24,8 +24,13 @@ class Blank1Fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val fragment2 = Blank2Fragment()
         binding.btnNext.setOnClickListener {
+            val fragment2 = Blank2Fragment()
+
+            val bundle2 = Bundle()
+            bundle2.putString(Blank2Fragment.EXTRA_VALUE, "My value for fragment 2")
+            fragment2.arguments = bundle2
+
             parentFragmentManager.beginTransaction().apply {
                 replace(R.id.fragment_container, fragment2, Blank2Fragment::class.java.simpleName)
                 addToBackStack(null)
