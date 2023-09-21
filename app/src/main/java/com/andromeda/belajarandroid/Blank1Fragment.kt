@@ -37,5 +37,10 @@ class Blank1Fragment : Fragment() {
                 commit()
             }
         }
+
+        binding.btnDialog.setOnClickListener {
+            val mDialogFragment = MyDialogFragment()
+            mDialogFragment.show(childFragmentManager, MyDialogFragment::class.java.simpleName)
+        }
     }
 }

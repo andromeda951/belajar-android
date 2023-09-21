@@ -21,7 +21,13 @@
             android:id="@+id/btn_next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/go_to_next_page"/>
+            android:text="@string/go_to_next_page" />
+
+        <Button
+            android:id="@+id/btn_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/call_dialog_fragment" />
     </LinearLayout>
 
 

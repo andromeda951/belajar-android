@@ -10,4 +10,7 @@
     <string name="hello_blank_fragment2">Hello blank fragment two (2)</string>
     <string name="go_to_fragment_activity">Go to Fragment Activity</string>
     <string name="go_to_next_page">Go to Next Page</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_dialog_fragment">Hello, this is example of dialog fragment</string>
+    <string name="call_dialog_fragment">Call Dialog Fragment</string>
 </resources>
