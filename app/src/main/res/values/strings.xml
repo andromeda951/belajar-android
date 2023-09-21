@@ -9,4 +9,5 @@
     <string name="hello_blank_fragment1">Hello blank fragment one (1)</string>
     <string name="hello_blank_fragment2">Hello blank fragment two (2)</string>
     <string name="go_to_fragment_activity">Go to Fragment Activity</string>
+    <string name="go_to_next_page">Go to Next Page</string>
 </resources>
